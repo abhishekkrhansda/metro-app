@@ -99,28 +99,70 @@ int main() {
     Graph g;
 
     // Add vertices (stations)
-    g.addVertex("MG Road");
-    g.addVertex("Bangalore Cantt");
-    g.addVertex("Madiwala");
-    g.addVertex("Bangalore East");
+   g.addVertex("Deepanjali Nagar");
+    g.addVertex("Magadi Road");
+    g.addVertex("Nagasandra");
+    g.addVertex("Dasarahalli");
+    g.addVertex("Jalahalli");
+    g.addVertex("Peenya");
+    g.addVertex("Peenya Industry");
+    g.addVertex("Yeshwanthpur");
+    g.addVertex("Sandal Soap Factory");
+    g.addVertex("Mahalakshmi");
+    g.addVertex("Rajajinagar");
+    g.addVertex("Kuvempu Road");
+    g.addVertex("Srirampura");
+    g.addVertex("Mantri Square Sampige Road");
+    g.addVertex("Kempegowda Majestic");
+    g.addVertex("Chickpete");
+    g.addVertex("Krishna Rajendra Market");
+    g.addVertex("National College");
+    g.addVertex("Lalbagh");
+    g.addVertex("South End Circle");
     g.addVertex("Jayanagar");
-    g.addVertex("Kormangala");
-    g.addVertex("Indiranagar");
-    g.addVertex("Whitefield");
-    g.addVertex("Electronic City");
-    g.addVertex("Hosur Road");
+    g.addVertex("Rashtreeya Vidyalaya Road");
+    g.addVertex("Banashankari");
+    g.addVertex("JP Nagar");
+    g.addVertex("Yelachenahalli");
 
     // Add edges (connections with weights)
-    g.addEdge("MG Road", "Bangalore Cantt", 10);
-    g.addEdge("Bangalore Cantt", "Madiwala", 15);
-    g.addEdge("Madiwala", "Bangalore East", 10);
-    g.addEdge("Bangalore East", "Jayanagar", 20);
-    g.addEdge("Jayanagar", "Kormangala", 5);
-    g.addEdge("Kormangala", "Indiranagar", 10);
-    g.addEdge("Indiranagar", "Whitefield", 25);
-    g.addEdge("Whitefield", "Electronic City", 30);
-    g.addEdge("Electronic City", "Hosur Road", 15);
-    g.addEdge("Hosur Road", "MG Road", 50);
+    g.addEdge("MG Road", "Trinity", 2);
+    g.addEdge("Trinity", "Halasuru", 2);
+    g.addEdge("Halasuru", "Indiranagar", 2);
+    g.addEdge("Indiranagar", "Swami Vivekananda Road", 2);
+    g.addEdge("Swami Vivekananda Road", "Baiyappanahalli", 3);
+    g.addEdge("MG Road", "Kempegowda Majestic", 7);
+    g.addEdge("Kempegowda Majestic", "Mysore Road", 8);
+    g.addEdge("Mysore Road", "Deepanjali Nagar", 2);
+    g.addEdge("Deepanjali Nagar", "Magadi Road", 3);
+    g.addEdge("Nagasandra", "Dasarahalli", 2);
+    g.addEdge("Dasarahalli", "Jalahalli", 2);
+    g.addEdge("Jalahalli", "Peenya", 2);
+    g.addEdge("Peenya", "Peenya Industry", 1);
+    g.addEdge("Peenya Industry", "Yeshwanthpur", 3);
+    g.addEdge("Yeshwanthpur", "Sandal Soap Factory", 2);
+    g.addEdge("Sandal Soap Factory", "Mahalakshmi", 2);
+    g.addEdge("Mahalakshmi", "Rajajinagar", 1);
+    g.addEdge("Rajajinagar", "Kuvempu Road", 2);
+    g.addEdge("Kuvempu Road", "Srirampura", 2);
+    g.addEdge("Srirampura", "Mantri Square Sampige Road", 2);
+    g.addEdge("Kempegowda Majestic", "Chickpete", 1);
+    g.addEdge("Chickpete", "Krishna Rajendra Market", 1);
+    g.addEdge("Krishna Rajendra Market", "National College", 2);
+    g.addEdge("National College", "Lalg.addVertex("MG Road");
+    g.addVertex("Trinity");
+    g.addVertex("Halasuru");
+    g.addVertex("Indiranagar");
+    g.addVertex("Swami Vivekananda Road");
+    g.addVertex("Baiyappanahalli");
+    g.addVertex("Mysore Road");
+    g.addVebagh", 2);
+    g.addEdge("Lalbagh", "South End Circle", 1);
+    g.addEdge("South End Circle", "Jayanagar", 2);
+    g.addEdge("Jayanagar", "Rashtreeya Vidyalaya Road", 1);
+    g.addEdge("Rashtreeya Vidyalaya Road", "Banashankari", 2);
+    g.addEdge("Banashankari", "JP Nagar", 2);
+    g.addEdge("JP Nagar", "Yelachenahalli", 3);
 
     string startStation ;
     cout << "starting station"<<" ";
@@ -135,7 +177,7 @@ int main() {
 
     vector<int> parents = g.dijkstra(startIndex, g.getNumberOfStations());
 
-    cout << "Shortest path from " << startStation << " to " << endStation << ": ";
+    cout << "Shortest path from " << startStation << " to " << endStation << " ----> " << "    ";
     g.printPath(parents, endIndex);
     cout << endl;
 
