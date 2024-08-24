@@ -80,7 +80,7 @@ public:
     void printPath(const vector<int>& parents, int end) {
         if (end == -1) return;
         printPath(parents, parents[end]);
-        cout << indexStation[end] << " ";
+        cout << indexStation[end] << "  ----->  ";
     }
 
     // Get index of a station
@@ -99,7 +99,7 @@ int main() {
     Graph g;
 
     // Add vertices (stations)
-   g.addVertex("Deepanjali Nagar");
+    g.addVertex("Deepanjali Nagar");
     g.addVertex("Magadi Road");
     g.addVertex("Nagasandra");
     g.addVertex("Dasarahalli");
@@ -149,14 +149,7 @@ int main() {
     g.addEdge("Kempegowda Majestic", "Chickpete", 1);
     g.addEdge("Chickpete", "Krishna Rajendra Market", 1);
     g.addEdge("Krishna Rajendra Market", "National College", 2);
-    g.addEdge("National College", "Lalg.addVertex("MG Road");
-    g.addVertex("Trinity");
-    g.addVertex("Halasuru");
-    g.addVertex("Indiranagar");
-    g.addVertex("Swami Vivekananda Road");
-    g.addVertex("Baiyappanahalli");
-    g.addVertex("Mysore Road");
-    g.addVebagh", 2);
+    g.addEdge("National College", "Lalbagh", 2);
     g.addEdge("Lalbagh", "South End Circle", 1);
     g.addEdge("South End Circle", "Jayanagar", 2);
     g.addEdge("Jayanagar", "Rashtreeya Vidyalaya Road", 1);
@@ -164,23 +157,27 @@ int main() {
     g.addEdge("Banashankari", "JP Nagar", 2);
     g.addEdge("JP Nagar", "Yelachenahalli", 3);
 
-    string startStation ;
-    cout << "starting station"<<" ";
-    cin>>startStation;
+    string startStation;
+    cout << "Enter the starting station: ";
+    cin >> startStation;
 
-    string endStation ;
-    cout<< "ending station" << " ";
-    cin>>endStation;
+    string endStation;
+    cout << "Enter the ending station: ";
+    cin >> endStation;
+
+    if (g.getStationIndex(startStation) == -1 || g.getStationIndex(endStation) == -1) {
+        cout << "Invalid station names entered." << endl;
+        return 1;
+    }
 
     int startIndex = g.getStationIndex(startStation);
     int endIndex = g.getStationIndex(endStation);
 
     vector<int> parents = g.dijkstra(startIndex, g.getNumberOfStations());
 
-    cout << "Shortest path from " << startStation << " to " << endStation << " ----> " << "    ";
+    cout << "Shortest path from " << startStation << " to " << endStation << endl;
     g.printPath(parents, endIndex);
     cout << endl;
 
     return 0;
 }
-
